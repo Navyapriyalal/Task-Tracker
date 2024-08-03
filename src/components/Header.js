@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
+import Button from './Button'
 
 const Header = ({title}) => {
   return (
-    <div>
+    <header className='header'>
       <h1>{title}</h1>
-    </div>
+      <Button  text='Add'/>
+    </header>
   )
 }
 
