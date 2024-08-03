@@ -28,10 +28,14 @@ const App=() => {
     setTasks(tasks.filter((task) => task.id !==id ))
   }
 
+  const toggleRemainder = (id) => {
+    console.log('Hello')
+    setTasks(tasks.map((task) => task.id === id ? { ...task , remainder: !task.remainder } : task))
+  }
   return (
     <div className="container">
       <Header /> 
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : 'No Tasks to show'}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder}/> : 'No Tasks to show'}
     </div>
   );
 }
